@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bwfgnvn2r4dus"]
+
+[ext_resource type="Script" uid="uid://doa5cuh4gsv87" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://d367oqeauslxa" path="res://Screenshot 2026-02-13 144721.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://c6kvdxqwpcfod" path="res://ray_cast_2d.gd" id="3_epypp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y32ns"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(2.253108, 0.90657234)
+
+[sub_resource type="ImageTexture" id="ImageTexture_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1458123008]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=976528139]
+position = Vector2(570, 315)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1423729489]
+offset_left = -30.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 38.0
+scale = Vector2(33.469265, 18.677366)
+color = Color(0.65678513, 0.36714745, 0.9887406, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1455318682]
+position = Vector2(1, 0)
+mesh = SubResource("PlaneMesh_y32ns")
+texture = SubResource("MeshTexture_wtcfe")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1699467897]
+
+[node name="Player" type="Area2D" parent="." unique_id=1455269020 node_paths=PackedStringArray("player", "ore", "ore_collidier")]
+position = Vector2(1122, 565)
+scale = Vector2(0.48, 1.085)
+script = ExtResource("1_0e48y")
+player = NodePath(".")
+ore = NodePath("../Ore")
+ore_collidier = NodePath("../Ore/CollisionShape2D")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=262559434]
+position = Vector2(-2.0833373, -4.7683716e-07)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=562420170]
+texture = SubResource("ImageTexture_epypp")
+
+[node name="Screenshot20260213144721" type="Sprite2D" parent="Player" unique_id=120581437]
+position = Vector2(-1.3132768, 0)
+scale = Vector2(-0.4103224, 0.23455763)
+texture = ExtResource("1_wtcfe")
+
+[node name="RayCast2D" type="RayCast2D" parent="Player" unique_id=1842283009]
+scale = Vector2(2.365, 2.365)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("3_epypp")
+
+[node name="Ore" type="Area2D" parent="." unique_id=315316721]
+position = Vector2(765, 346)
+scale = Vector2(0.48, 1.085)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ore" unique_id=772707274]
+position = Vector2(-1.313277, -4.7683716e-07)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ore" unique_id=622070662]
+texture = SubResource("ImageTexture_epypp")
+
+[node name="Screenshot20260213144721" type="Sprite2D" parent="Ore" unique_id=966277673]
+modulate = Color(0.4201695, 0.028367193, 0.19295076, 1)
+position = Vector2(-1.3132768, 0)
+scale = Vector2(-0.4103224, 0.23455763)
+texture = ExtResource("1_wtcfe")
