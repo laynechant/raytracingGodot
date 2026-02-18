@@ -63,17 +63,13 @@ func _physics_process(delta: float):
 		pass
 
 
-func _draw():
-	
-	for positions in result:
-		draw_line(player_collision_edge, positions, Color.GREEN, 1.0)
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var  velocity = Vector2.ZERO
 	#_physics_process(delta)
 	
+	print("Player Location: ", player.global_position)
+	print("Ore Location: ", ore.global_position)
 	
 	if Input.is_action_pressed("move_up"):
 			velocity.y -= 1

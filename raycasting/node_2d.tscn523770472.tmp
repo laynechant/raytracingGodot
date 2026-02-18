@@ -34,7 +34,7 @@ texture = SubResource("MeshTexture_wtcfe")
 [node name="Node2D" type="Node2D" parent="." unique_id=1699467897]
 
 [node name="Player" type="Area2D" parent="." unique_id=1455269020 node_paths=PackedStringArray("player", "ore", "ore_collidier")]
-position = Vector2(1091.0001, 563)
+position = Vector2(1122, 565)
 scale = Vector2(0.48, 1.085)
 script = ExtResource("1_0e48y")
 player = NodePath(".")
@@ -54,18 +54,14 @@ position = Vector2(-1.3132768, 0)
 scale = Vector2(-0.4103224, 0.23455763)
 texture = ExtResource("1_wtcfe")
 
-[node name="RayCast2D" type="RayCast2D" parent="Player" unique_id=1842283009 node_paths=PackedStringArray("ore")]
-position = Vector2(2.0831633, 40.552975)
+[node name="RayCast2D" type="RayCast2D" parent="Player" unique_id=1842283009]
 scale = Vector2(2.42, 2.42)
-target_position = Vector2(10, 60)
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_epypp")
-ore = NodePath("../../Ore")
 
 [node name="Ore" type="Area2D" parent="." unique_id=315316721]
 position = Vector2(765, 346)
-rotation = 0.04168726
 scale = Vector2(0.48, 1.085)
 metadata/_edit_group_ = true
 
