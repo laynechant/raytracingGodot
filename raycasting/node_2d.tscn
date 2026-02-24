@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doa5cuh4gsv87" path="res://player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://d367oqeauslxa" path="res://Screenshot 2026-02-13 144721.png" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://c6kvdxqwpcfod" path="res://ray_cast_2d.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://c0jwfjpdfibb6" path="res://ore.gd" id="4_0hol4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y32ns"]
 
@@ -57,7 +58,7 @@ texture = ExtResource("1_wtcfe")
 [node name="RayCast2D" type="RayCast2D" parent="Player" unique_id=1842283009 node_paths=PackedStringArray("ore")]
 position = Vector2(2.0831633, 40.552975)
 scale = Vector2(2.42, 2.42)
-target_position = Vector2(10, 60)
+target_position = Vector2(0, 40)
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("3_epypp")
@@ -67,6 +68,7 @@ ore = NodePath("../../Ore")
 position = Vector2(765, 346)
 rotation = 0.04168726
 scale = Vector2(0.48, 1.085)
+script = ExtResource("4_0hol4")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ore" unique_id=772707274]
